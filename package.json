@@ -1,0 +1,36 @@
+{
+    "name":  "proposal-agent",
+    "version":  "0.1.0",
+    "private":  true,
+    "scripts":  {
+                    "dev":  "next dev --turbopack",
+                    "build":  "next build",
+                    "start":  "next start",
+                    "lint":  "eslint .",
+                    "lint:fix":  "eslint . --fix",
+                    "format":  "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
+                    "format:check":  "prettier --check \"src/**/*.{ts,tsx,css,json}\"",
+                    "type-check":  "tsc --noEmit",
+                    "check":  "npm run type-check \u0026\u0026 npm run lint \u0026\u0026 npm run format:check"
+                },
+    "dependencies":  {
+                         "next":  "15.5.20",
+                         "react":  "19.2.7",
+                         "react-dom":  "19.2.7"
+                     },
+    "devDependencies":  {
+                            "@eslint/eslintrc":  "^3.3.6",
+                            "@tailwindcss/postcss":  "^4",
+                            "@types/node":  "^20",
+                            "@types/react":  "^19",
+                            "@types/react-dom":  "^19",
+                            "eslint":  "^9",
+                            "eslint-config-next":  "15.5.20",
+                            "eslint-config-prettier":  "^10.1.8",
+                            "eslint-plugin-prettier":  "^5.5.6",
+                            "prettier":  "^3.9.5",
+                            "prettier-plugin-tailwindcss":  "^0.8.1",
+                            "tailwindcss":  "^4",
+                            "typescript":  "^5"
+                        }
+}
