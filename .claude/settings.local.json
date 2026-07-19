@@ -6,7 +6,13 @@
       "PowerShell(Set-Content *)",
       "PowerShell(npm i *)",
       "PowerShell([System.IO.File]::WriteAllText\\(\"D:\\\\Usama Data\\\\Proposal Agent\\\\package.json\", [System.IO.File]::ReadAllText\\(\"D:\\\\Usama Data\\\\Proposal Agent\\\\package.json\", [System.Text.Encoding]::UTF8\\).TrimStart\\([char]0xFEFF\\), [System.Text.Encoding]::new\\([System.Text.Encoding]::UTF8.CodePage, $false\\)\\))",
-      "PowerShell($path = \"D:\\\\Usama Data\\\\Proposal Agent\\\\package.json\"; $bytes = [System.IO.File]::ReadAllBytes\\($path\\); if \\($bytes[0] -eq 239 -and $bytes[1] -eq 187 -and $bytes[2] -eq 191\\) { [System.IO.File]::WriteAllBytes\\($path, $bytes[3..\\($bytes.Length-1\\)]\\) })"
+      "PowerShell($path = \"D:\\\\Usama Data\\\\Proposal Agent\\\\package.json\"; $bytes = [System.IO.File]::ReadAllBytes\\($path\\); if \\($bytes[0] -eq 239 -and $bytes[1] -eq 187 -and $bytes[2] -eq 191\\) { [System.IO.File]::WriteAllBytes\\($path, $bytes[3..\\($bytes.Length-1\\)]\\) })",
+      "Bash(npm install *)",
+      "Bash(npx shadcn@latest *)",
+      "Bash(npx drizzle-kit *)",
+      "Bash(npm run *)",
+      "Bash(npx vitest *)",
+      "Bash(git add *)"
     ]
   }
 }

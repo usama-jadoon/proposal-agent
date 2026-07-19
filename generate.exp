@@ -1,0 +1,6 @@
+#!/usr/bin/expect -f
+set timeout -1
+spawn npx drizzle-kit generate
+expect "Are you sure you want to add NOT NULL column 'user_id' to table 'jobs' without default value?"
+send "\r"
+expect eof
