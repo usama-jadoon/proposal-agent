@@ -1,5 +1,7 @@
 # Proposal Agent
 
+[![CI](https://github.com/usama-jadoon/proposal-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/usama-jadoon/proposal-agent/actions/workflows/ci.yml)
+
 An AI-powered application designed to streamline Upwork job analysis and proposal generation. It analyzes job descriptions, extracts necessary skills, estimates hiring probabilities, maps out client psychology, and drafts highly targeted and personalized proposals using Anthropic/OpenAI via an OmniRoute backend orchestration layer.
 
 ## Architecture
