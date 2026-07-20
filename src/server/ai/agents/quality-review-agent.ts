@@ -1,14 +1,16 @@
-import { z } from "zod";
-import { BaseAgent } from "../core/base-agent";
+import { z } from 'zod';
+import { BaseAgent } from '../core/base-agent';
 
 export const qualityReviewSchema = z.object({
-  isPassable: z.boolean().describe("Does this proposal meet strict quality standards?"),
-  critique: z.string().describe("If false, why does it fail?"),
-  readingLevel: z.string().describe("Grade level of reading"),
+  isPassable: z
+    .boolean()
+    .describe('Does this proposal meet strict quality standards?'),
+  critique: z.string().describe('If false, why does it fail?'),
+  readingLevel: z.string().describe('Grade level of reading'),
 });
 
 export class QualityReviewAgent extends BaseAgent<typeof qualityReviewSchema> {
-  name = "quality_review_agent";
+  name = 'quality_review_agent';
   schema = qualityReviewSchema;
 
   protected getSystemPrompt() {

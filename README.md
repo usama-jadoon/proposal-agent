@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Proposal Agent
 
-## Getting Started
+An AI-powered application designed to streamline Upwork job analysis and proposal generation. It analyzes job descriptions, extracts necessary skills, estimates hiring probabilities, maps out client psychology, and drafts highly targeted and personalized proposals using Anthropic/OpenAI via an OmniRoute backend orchestration layer.
 
-First, run the development server:
+## Architecture
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This project is built using:
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript
+- **Database:** PostgreSQL (with Neon/Local)
+- **ORM:** Drizzle ORM
+- **Authentication:** Better Auth
+- **Styling:** Tailwind CSS V4
+- **Component Lib:** Base UI & Custom UI with tailwind
+- **AI Orchestration:** OmniRoute standard bridging into structured JSON models
+
+## Features
+- **Job Ingestion:** Paste an Upwork URL and extract relevant details constraints instantly.
+- **AI Orchestration Pipeline:**
+  - **Qualification Agent:** Determines intent/win probability based on budget and client data.
+  - **Psychology Agent:** Evaluates fears and requirements based on word usage.
+  - **Strategy & Proposal Agents:** Writes the winning draft with alternate hooks.
+- **Dashboard UI:** View aggregated insights and generated outputs dynamically.
+- **Resilience:** Implemented exponential backoffs, DB query rate-limits, and toast notifications.
+
+## Local Setup
+
+### 1. Prerequisites
+- Node.js LTS (v20+)
+- PostgreSQL Database
+- Upwork / OpenAI Developer credentials
+
+### 2. Environment Variables
+Create a `.env` file in the root directory:
+
+```env
+DATABASE_URL="postgres://user:password@localhost:5432/db"
+BETTER_AUTH_SECRET="your_secure_secret"
+BETTER_AUTH_URL="http://localhost:3000"
+OMNIROUTE_API_KEY="sk-..."
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Database Setup
 
-## Learn More
+```bash
+# Push the Drizzle schema to your connected DB
+npm run db:push
 
-To learn more about Next.js, take a look at the following resources:
+# Verify via Studio (Optional)
+npm run db:studio
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 5. Running the App
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Start development server
+npm run dev
+```
 
-## Deploy on Vercel
+Visit `http://localhost:3000` to register, connect your keys, and begin importing jobs.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Monitoring & Best Practices
+- **Security:** Standard HTTP strict transport and X-Frame headers built natively into next.config.
+- **Rate-Limiting:** Imported routes adhere to 10 min window constraints.
+- **Health Checks:** Monitor infrastructure health at `/api/health`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+MIT

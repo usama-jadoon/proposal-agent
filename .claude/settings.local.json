@@ -12,7 +12,12 @@
       "Bash(npx drizzle-kit *)",
       "Bash(npm run *)",
       "Bash(npx vitest *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(sed -i 's/@import \"tw-animate-css\";//g' src/app/globals.css)",
+      "Bash(sed -i 's/@import \"shadcn\\\\/tailwind.css\";//g' src/app/globals.css)",
+      "Bash(npm pkg *)",
+      "Bash(git branch *)"
     ]
   }
 }

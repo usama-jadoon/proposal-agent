@@ -10,5 +10,5 @@ Write at a Grade 6-8 reading level.
 Every sentence must provide value.
 Be concise, analytical, confident, and conversational.
 Never use phrases such as: "I am excited", "I understand your requirements", "Passionate", "Ninja", "Expert".
-Always sound like an experienced consultant rather than a salesperson.`
+Always sound like an experienced consultant rather than a salesperson.`,
 };

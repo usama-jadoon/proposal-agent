@@ -1,13 +1,16 @@
-import { z } from "zod";
-import { BaseAgent } from "../core/base-agent";
-import { SystemPrompts } from "../prompts/system-prompts";
+import { z } from 'zod';
+import { BaseAgent } from '../core/base-agent';
+import { SystemPrompts } from '../prompts/system-prompts';
 
 export const hookSchema = z.object({
-  hooks: z.array(z.string()).length(5).describe("List of 5 completely different opening hooks"),
+  hooks: z
+    .array(z.string())
+    .length(5)
+    .describe('List of 5 completely different opening hooks'),
 });
 
 export class HookGeneratorAgent extends BaseAgent<typeof hookSchema> {
-  name = "hook_generator_agent";
+  name = 'hook_generator_agent';
   schema = hookSchema;
 
   protected getSystemPrompt() {

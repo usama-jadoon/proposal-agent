@@ -6,7 +6,7 @@ export class JobParser {
   static extractUpworkIdFromUrl(url: string): string {
     const match = url.match(/~[a-zA-Z0-9]+/);
     if (!match) {
-      throw new Error("Invalid Upwork URL: Cannot extract Job ID hash");
+      throw new Error('Invalid Upwork URL: Cannot extract Job ID hash');
     }
     return match[0];
   }
@@ -16,11 +16,11 @@ export class JobParser {
    */
   static formatBudgetInfo(budget?: number | null, hourlyRate?: string | null) {
     if (budget) {
-      return { type: "fixed", amount: budget };
+      return { type: 'fixed', amount: budget };
     }
     if (hourlyRate) {
-      return { type: "hourly", range: hourlyRate };
+      return { type: 'hourly', range: hourlyRate };
     }
-    return { type: "unknown" };
+    return { type: 'unknown' };
   }
 }

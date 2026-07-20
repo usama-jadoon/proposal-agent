@@ -1,13 +1,15 @@
-import { z } from "zod";
-import { BaseAgent } from "../core/base-agent";
-import { SystemPrompts } from "../prompts/system-prompts";
+import { z } from 'zod';
+import { BaseAgent } from '../core/base-agent';
+import { SystemPrompts } from '../prompts/system-prompts';
 
 export const proposalWriterSchema = z.object({
-  proposal: z.string().describe("100-150 words personalized Upwork proposal"),
+  proposal: z.string().describe('100-150 words personalized Upwork proposal'),
 });
 
-export class ProposalWriterAgent extends BaseAgent<typeof proposalWriterSchema> {
-  name = "proposal_writer_agent";
+export class ProposalWriterAgent extends BaseAgent<
+  typeof proposalWriterSchema
+> {
+  name = 'proposal_writer_agent';
   schema = proposalWriterSchema;
 
   protected getSystemPrompt() {

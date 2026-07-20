@@ -1,7 +1,7 @@
-import { JobRepository } from "@/server/repositories/job-repository";
-import { JobParser } from "./job-parser";
-import type { ImportJobInput } from "./job-validator";
-import type { Job } from "@/server/db/types";
+import { JobRepository } from '@/server/repositories/job-repository';
+import { JobParser } from './job-parser';
+import type { ImportJobInput } from './job-validator';
+import type { Job } from '@/server/db/types';
 
 export class JobService {
   private repository: JobRepository;
@@ -14,7 +14,10 @@ export class JobService {
    * Orchestrates the ingestion of a new Upwork Job.
    * Intercepts duplicates by checking the parsed URL hash.
    */
-  async ingestJob(userId: string, input: ImportJobInput): Promise<{ job: Job; isDuplicate: boolean }> {
+  async ingestJob(
+    userId: string,
+    input: ImportJobInput,
+  ): Promise<{ job: Job; isDuplicate: boolean }> {
     // 1. Normalize unique identifier
     const upworkJobId = JobParser.extractUpworkIdFromUrl(input.url);
 
@@ -27,7 +30,10 @@ export class JobService {
     }
 
     // 3. Format loosely structured metadata
-    const budgetInfo = JobParser.formatBudgetInfo(input.budget, input.hourlyRate);
+    const budgetInfo = JobParser.formatBudgetInfo(
+      input.budget,
+      input.hourlyRate,
+    );
 
     // 4. Ingest via Repository
     const newJob = await this.repository.create({

@@ -1,6 +1,6 @@
-import { z } from "zod";
-import { BaseAgent } from "../core/base-agent";
-import { SystemPrompts } from "../prompts/system-prompts";
+import { z } from 'zod';
+import { BaseAgent } from '../core/base-agent';
+import { SystemPrompts } from '../prompts/system-prompts';
 
 export const solutionSchema = z.object({
   discovery: z.string(),
@@ -10,12 +10,18 @@ export const solutionSchema = z.object({
   testing: z.string(),
   optimization: z.string(),
   reporting: z.string(),
-  discoveryQuestions: z.array(z.string()).length(5).describe("5 intelligent questions to ask the client"),
-  ctas: z.array(z.string()).length(5).describe("5 low-friction calls to action"),
+  discoveryQuestions: z
+    .array(z.string())
+    .length(5)
+    .describe('5 intelligent questions to ask the client'),
+  ctas: z
+    .array(z.string())
+    .length(5)
+    .describe('5 low-friction calls to action'),
 });
 
 export class SolutionStrategyAgent extends BaseAgent<typeof solutionSchema> {
-  name = "solution_strategy_agent";
+  name = 'solution_strategy_agent';
   schema = solutionSchema;
 
   protected getSystemPrompt() {

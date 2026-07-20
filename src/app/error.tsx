@@ -15,10 +15,10 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="flex flex-col items-center justify-center h-[50vh] gap-4">
+    <div className="flex h-[50vh] flex-col items-center justify-center gap-4">
       <h2 className="text-2xl font-bold">Something went wrong!</h2>
       <button
-        className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90"
+        className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-md px-4 py-2"
         onClick={() => reset()}
       >
         Try again

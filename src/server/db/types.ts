@@ -1,11 +1,11 @@
-import type { InferInsertModel, InferSelectModel } from "drizzle-orm";
-import * as schema from "./schema";
+import type { InferInsertModel, InferSelectModel } from 'drizzle-orm';
+import * as schema from './schema';
 
 // Users
 export type User = InferSelectModel<typeof schema.user>;
 export type NewUser = InferInsertModel<typeof schema.user>;
 
-// User Settings 
+// User Settings
 export type UserSettings = InferSelectModel<typeof schema.userSettings>;
 export type NewUserSettings = InferInsertModel<typeof schema.userSettings>;
 
@@ -18,8 +18,12 @@ export type JobAnalysis = InferSelectModel<typeof schema.jobAnalyses>;
 export type NewJobAnalysis = InferInsertModel<typeof schema.jobAnalyses>;
 
 // Proposal Templates
-export type ProposalTemplate = InferSelectModel<typeof schema.proposalTemplates>;
-export type NewProposalTemplate = InferInsertModel<typeof schema.proposalTemplates>;
+export type ProposalTemplate = InferSelectModel<
+  typeof schema.proposalTemplates
+>;
+export type NewProposalTemplate = InferInsertModel<
+  typeof schema.proposalTemplates
+>;
 
 // Proposals
 export type Proposal = InferSelectModel<typeof schema.proposals>;
